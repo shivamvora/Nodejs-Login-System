@@ -7,6 +7,11 @@
                     Login System
                 </h2>
                 <span>Log in for the existing user</span>
+                <% if(locals.logout){ %>
+                    <div class="alert alert-success text-center">
+                        <%= logout %>
+                    </div>
+                    <% } %>
             </div>
             <form action="/route/login" method="POST" class="pt-3">
                 <div class="form-group">
@@ -14,7 +19,7 @@
                     <small class="form-text text-muted">Register email address</small>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Enter  Password">
+                    <input type="password" class="form-control" placeholder="Enter  Password" name="password">
                 </div><br>
                 <button type="submit" class="btn btn-success rounded-pill">Submit</button>
             </form>

@@ -28,4 +28,15 @@ router.get( '/dashboard', ( req, res ) => {
     }
 } )
 
+router.get( '/logout', ( req, res ) => {
+    req.session.destroy( function ( err ) {
+        if ( err ) {
+            console.log( err );
+            res.send( "Error" )
+        } else {
+            res.render( 'base', { title: "Express", logout: "logout Successfully...!" } )
+        }
+    } )
+} )
+
 module.exports = router;
